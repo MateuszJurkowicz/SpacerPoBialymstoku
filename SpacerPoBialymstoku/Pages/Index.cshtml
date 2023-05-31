@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    <form method="post" enctype="multipart/form-data">
+        <div class="card-header">
+            <h2 class="display-4">Dodaj nowe miejsce</h2>
+        </div>
+        <div class="card-body">
+            <input type="file" name="file" class="custom-file-input">
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Zatwierdź</button>
+        </div>
+        <div asp-for="place.Image">
+            @if(!string.IsNullOrWhiteSpace(@Model.FilePath))
+            {
+                <img src="@Model.FilePath" alt="Niepoprawnie wczytano zdjęcie">
+
+            }
+        </div>
+    </form>
+</div>
