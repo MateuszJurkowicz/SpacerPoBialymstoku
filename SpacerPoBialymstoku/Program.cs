@@ -17,6 +17,8 @@ namespace SpacerPoBialymstoku
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+            builder.Services.AddDbContext<PlaceDbContext>(options =>
+                options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -24,6 +26,12 @@ namespace SpacerPoBialymstoku
             builder.Services.AddRazorPages();
 
             builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+            builder.Services.AddTransient<JsonFilePlaceService>();
+            builder.Services.AddTransient<IPlacesService, PlacesService>();
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.SameSite = SameSiteMode.None;
+            });
 
             var app = builder.Build();
 
@@ -41,14 +49,6 @@ namespace SpacerPoBialymstoku
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-           /* app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider
-                (Path.Combine(env.ContentRootPath, "Images")),
-                RequestPath = "/Images"
-            });*/
-
 
 
             app.UseRouting();

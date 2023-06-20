@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Title": "Rynek Kosciuszki",
+    "Description": "Lata powojenne - odbudowa",
+    "OldImageUrl": "https://imgtr.ee/images/2023/06/06/pkiYU.jpg",
+    "ActualImageUrl": "https://i.nocimg.pl/polskazdrona/zdjecia/rynek-kosciuszki-w-bialymstoku.jpg"
+  },
+  { 
+    "Id": 2,
+    "Title": "Ulica Lipowa",
+    "Description": "Widok z wieży kościoła św. Rocha",
+    "OldImageUrl": "https://imgtr.ee/images/2023/06/06/pnNpQ.jpg",
+    "ActualImageUrl": ""
+  },
+  {
+    "Id": 3,
+    "Title": "Ulica Świętojańska",
+    "Description": "brak",
+    "OldImageUrl": "https://imgtr.ee/images/2023/06/06/pkjsB.jpg",
+    "ActualImageUrl": ""
+  },
+  {
+    "Id": 4,
+    "Title": "Ulica Częstochowska",
+    "Description": "Widok z wieży kościoła św. Rocha",
+    "OldImageUrl": "https://imgtr.ee/images/2023/06/06/pnx4R.jpg",
+    "ActualImageUrl": ""
+  },
+  {
+    "Id": 5,
+    "Title": "Ritz",
+    "Description": "Widok od strony dziedzińca Pałacu Branickich",
+    "OldImageUrl": "https://imgtr.ee/images/2023/06/06/pnLRB.jpg",
+    "ActualImageUrl": ""
+  }
+]

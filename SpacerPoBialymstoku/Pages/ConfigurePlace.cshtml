@@ -1,0 +1,38 @@
+﻿@page
+@model SpacerPoBialymstoku.Pages.ConfigurePlaceModel
+@{
+}
+
+<div class="form-container">
+    <div class="form-content col-md-6">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="card-body">
+                    <label asp-for="place.Title">Tytuł:</label>
+                    <input type="text" asp-for="place.Title" style="width: 390px"  required />
+                </div>
+
+                <div class="card-body">
+                    <label asp-for="place.Description">Opis:</label>
+                    <textarea asp-for="place.Description" rows="6" cols="50" required></textarea>
+                </div>
+
+                <div class="card-body">
+                    <label asp-for="place.OldImageFile" class="control-label">Stare zdjęcie</label>
+                    <input type="file" asp-for="place.OldImageFile" class="form-control" />
+                </div>
+
+                <div class="card-body">
+                    <label asp-for="place.ActualImageFile" class="control-label">Aktualne zdjęcie</label>
+                    <input type="file" asp-for="place.ActualImageFile" class="form-control" />
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Zatwierdź</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
