@@ -10,6 +10,7 @@ namespace SpacerPoBialymstoku.Models
         public string Description { get; set; }
         public string OldImageData { get; set; }
         public string ActualImageData { get; set; }
+        public int Rating { get; set; }
         [NotMapped]
         public IFormFile OldImageFile { get; set; }
         [NotMapped] 

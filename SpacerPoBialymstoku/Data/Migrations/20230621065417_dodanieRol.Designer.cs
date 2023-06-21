@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SpacerPoBialymstoku.Data;
 
@@ -11,9 +12,10 @@ using SpacerPoBialymstoku.Data;
 namespace SpacerPoBialymstoku.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230621065417_dodanieRol")]
+    partial class dodanieRol
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,15 +53,15 @@ namespace SpacerPoBialymstoku.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "da4f6f31-1f65-4757-b878-66685397f27b",
-                            ConcurrencyStamp = "23f541e7-1b11-4114-a584-1fdccde79204",
+                            Id = "367d6042-41a2-4097-b246-fb359c733ba9",
+                            ConcurrencyStamp = "17ac66ca-8139-46f8-8c1b-033dc31e8289",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "0e4541ff-36a8-4b3f-9f84-488a51fc1f30",
-                            ConcurrencyStamp = "c2b9b2d4-1b8a-44ed-870e-af06be740010",
+                            Id = "4b7f311d-1710-4b84-bf83-1b0cd1f0a4d4",
+                            ConcurrencyStamp = "62b00b9e-21a1-4ae0-96e1-aafd96d5bee0",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });
@@ -157,35 +159,35 @@ namespace SpacerPoBialymstoku.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2733b301-7dd7-4cd5-be3f-d798383aa861",
+                            Id = "5a688171-6ffc-4aa5-ac90-9d16171b8424",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4805cb92-7e13-4155-87f0-470311fe08c6",
-                            Email = "aa@aa.aa",
+                            ConcurrencyStamp = "3f501250-19e4-4cdd-bf7b-60b97d341bbf",
+                            Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "AA@AA.AA",
-                            NormalizedUserName = "AA@AA.AA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOx+bsprsbx4WdLNHdW5IaS5bXZELpy9pN33bll4hZQ1jdGSrUzf4pfDqtuWp2JXow==",
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPf7vgH7MsOYbkcEJ13Hl5DUEGY6h/+/21aK8J0rwOLgv2iy6pD1f8hHzz6XWrdgIw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2797d133-8003-43ab-bb0c-8cab24628220",
+                            SecurityStamp = "b7dee563-ffcc-4073-987b-8c0b9966c413",
                             TwoFactorEnabled = false,
-                            UserName = "aa@aa.aa"
+                            UserName = "admin"
                         },
                         new
                         {
-                            Id = "6b2feb12-42a0-48b4-8734-2044b92cfe90",
+                            Id = "c573af96-a3a6-4d91-a473-561164964964",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6c08de76-bc45-4f65-b808-e43d2b658ea2",
-                            Email = "mm@mm.mm",
+                            ConcurrencyStamp = "5ee25944-15a6-489e-9414-29fea393b804",
+                            Email = "user@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "MM@MM.MM",
-                            NormalizedUserName = "MM@MM.MM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJFxxdNYhYERGNGueCPoW2X0wdOjAJ1M8RJOkBVit/91Hwp2xPrpr9lxu4VEGQg6OQ==",
+                            NormalizedEmail = "USER@GMAIL.COM",
+                            NormalizedUserName = "USER",
+                            PasswordHash = "AQAAAAEAACcQAAAAELZaUKiQ9izvO0+VEwPw5ddSUOJAuLif9SjFeyatPiaAeDIG9WGG5nUvGkUzboBzIw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5dde04c2-696a-465f-9ca5-9581c2fa5e33",
+                            SecurityStamp = "84ad1702-5543-4e9f-98d2-e81064145e85",
                             TwoFactorEnabled = false,
-                            UserName = "mm@mm.mm"
+                            UserName = "user"
                         });
                 });
 
@@ -255,13 +257,13 @@ namespace SpacerPoBialymstoku.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "2733b301-7dd7-4cd5-be3f-d798383aa861",
-                            RoleId = "da4f6f31-1f65-4757-b878-66685397f27b"
+                            UserId = "5a688171-6ffc-4aa5-ac90-9d16171b8424",
+                            RoleId = "367d6042-41a2-4097-b246-fb359c733ba9"
                         },
                         new
                         {
-                            UserId = "6b2feb12-42a0-48b4-8734-2044b92cfe90",
-                            RoleId = "0e4541ff-36a8-4b3f-9f84-488a51fc1f30"
+                            UserId = "c573af96-a3a6-4d91-a473-561164964964",
+                            RoleId = "4b7f311d-1710-4b84-bf83-1b0cd1f0a4d4"
                         });
                 });
 

@@ -21,9 +21,18 @@ namespace SpacerPoBialymstoku
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+                {
+                    options.Stores.MaxLengthForKeys = 128;
+                })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddRoles<IdentityRole>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
             builder.Services.AddRazorPages();
+
 
             builder.Services.AddScoped<IFileUploadService, FileUploadService>();
             builder.Services.AddTransient<JsonFilePlaceService>();

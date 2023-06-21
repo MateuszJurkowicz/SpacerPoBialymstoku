@@ -8,5 +8,8 @@ namespace SpacerPoBialymstoku.Interfaces
         void SavePlace(Place place);
         Place GetPlaceFromDatabase(int id);
         void DeletePlaceFromDatabase(Place place);
+        void UpdatePlaceInDatabase(Place place);
+        void IncreasePlaceRating(int id);
+        void DecreasePlaceRating(int id);
     }
 }

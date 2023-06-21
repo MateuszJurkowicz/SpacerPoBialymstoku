@@ -20,13 +20,16 @@
     </div>
     <form method="post">
         <div class="col" style="padding: 40px">
-            <a href="ConfigurePlace?id=@Model._place.Id" style="margin: 0 30px 0 0">
-                <img src="https://e7.pngegg.com/pngimages/973/557/png-clipart-computer-icons-gear-encapsulated-postscript-others-set-line.png" alt="Edytuj" width="40" height="40">
-            </a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="ConfigurePlace?id=@Model._place.Id" style="margin: 0 30px 0 0">
+                    <img src="https://e7.pngegg.com/pngimages/973/557/png-clipart-computer-icons-gear-encapsulated-postscript-others-set-line.png" alt="Edytuj" width="40" height="40">
+                </a>
 
-            <button type="submit" class="btn">
-                <img src="https://e7.pngegg.com/pngimages/688/147/png-clipart-computer-icons-x-letter-symbol-miscellaneous-angle-thumbnail.png" alt="Kasuj" width="40" height="40">
-            </button>
+                <button type="submit" class="btn">
+                    <img src="https://e7.pngegg.com/pngimages/688/147/png-clipart-computer-icons-x-letter-symbol-miscellaneous-angle-thumbnail.png" alt="Kasuj" width="40" height="40">
+                </button>
+            }
         </div>
     </form>
 </div>

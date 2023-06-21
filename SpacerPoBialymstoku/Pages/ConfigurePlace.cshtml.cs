@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SpacerPoBialymstoku.Interfaces;
@@ -5,6 +6,7 @@ using SpacerPoBialymstoku.Models;
 
 namespace SpacerPoBialymstoku.Pages
 {
+[Authorize(Roles = "Admin")]
     public class ConfigurePlaceModel : PageModel
     {
         private readonly IPlacesService _placesService;
@@ -19,7 +21,7 @@ namespace SpacerPoBialymstoku.Pages
             place = _placesService.GetPlaceFromDatabase(Id);
             return Page();
         }
-        public IActionResult OnPost(Place place)
+        public IActionResult OnPost()
         {
             byte[] bytes = null;
             if (place.OldImageFile != null)
@@ -44,7 +46,7 @@ namespace SpacerPoBialymstoku.Pages
                 }
                 place.ActualImageData = Convert.ToBase64String(bytes, 0, bytes.Length);
             }
-            _placesService.SavePlace(place);
+            _placesService.UpdatePlaceInDatabase(place);
             return RedirectToPage("./PlacesToVisit");
         }
     }

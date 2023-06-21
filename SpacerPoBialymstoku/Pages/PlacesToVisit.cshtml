@@ -2,12 +2,24 @@
 @model SpacerPoBialymstoku.Pages.PlacesToVisitModel
 @{
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
 <div class="card-columns">
 
     @foreach (var place in Model.PlacesFromDatabase)
     {
+
         <div class="card" style="display: inline-block; vertical-align: bottom;">
+            <div class="like-dislike-buttons" style="position: absolute; right: 0;">
+                <form method="post">
+                    <input type="hidden" name="placeId" value="@place.Id" />
+                    <p>@place.Rating</p>
+                    <button type="submit" class="like-button" name="action" value="like"><i class="fas fa-thumbs-up"></i></button>
+                    <button type="submit" class="dislike-button" name="action" value="dislike"><i class="fas fa-thumbs-down"></i></button>
+                </form>
+
+
+            </div>
             <div class="card-body">
                 <h4 class="card-title">@place.Title</h4>
                 <span style="font-size: 12px;">@place.Description</span>
@@ -16,6 +28,7 @@
                 <div class="card-img" style="background-image: url('data:image/jpg;base64,@place.OldImageData')" ;>
                 </div>
             </a>
+
         </div>
 
     }

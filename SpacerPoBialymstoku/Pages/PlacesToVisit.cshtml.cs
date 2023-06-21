@@ -25,5 +25,19 @@ namespace SpacerPoBialymstoku.Pages
             Places = _jsonFilePlaceService.GetPlaces();
             PlacesFromDatabase = _placesService.GetPlacesFromDatabase();
         }
+        public IActionResult OnPost(string action, int placeId)
+        {
+
+            if (action == "like")
+            {
+                _placesService.IncreasePlaceRating(placeId);
+            }
+            else if (action == "dislike")
+            {
+                _placesService.DecreasePlaceRating(placeId);
+            }
+            PlacesFromDatabase = _placesService.GetPlacesFromDatabase();
+            return Page();
+        }
     }
 }

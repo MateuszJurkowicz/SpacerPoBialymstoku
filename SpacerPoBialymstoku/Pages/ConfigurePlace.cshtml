@@ -7,7 +7,9 @@
     <div class="form-content col-md-6">
         <div class="row">
             <form method="post" enctype="multipart/form-data">
-
+                <input type="hidden" asp-for="place.Id"/>
+                <input type="hidden" asp-for="place.OldImageData" />
+                <input type="hidden" asp-for="place.ActualImageData" />
                 <div class="card-body">
                     <label asp-for="place.Title">Tytuł:</label>
                     <input type="text" asp-for="place.Title" style="width: 390px"  required />

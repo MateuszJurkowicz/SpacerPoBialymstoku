@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SpacerPoBialymstoku.Data;
 
@@ -10,9 +11,10 @@ using SpacerPoBialymstoku.Data;
 namespace SpacerPoBialymstoku.Migrations
 {
     [DbContext(typeof(PlaceDbContext))]
-    partial class PlaceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230621053700_migracja2")]
+    partial class migracja2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
